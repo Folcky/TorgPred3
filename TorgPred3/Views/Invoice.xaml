@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="TorgPred3.Views.Invoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TorgPred3.Code"
+             mc:Ignorable="d" 
+             d:DesignHeight="245" d:DesignWidth="547">
+    <UserControl.Resources>
+        <local:ValueToBrushConverter x:Key="ValueToBrushConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Border Margin="0,30,0,0" Grid.ColumnSpan="3" BorderThickness="0,2,0,0" BorderBrush="#FF9D9D9D">
+            <Grid>
+                <GroupBox Header="Загруженные накладные" HorizontalAlignment="Left" Name="gbDocs" Width="323">
+                    <Grid>
+                        <DataGrid AutoGenerateColumns="False" Margin="6,6,6,42" Name="dgDocs" ItemsSource="{Binding}" IsReadOnly="True" SelectionChanged="dgDocs_SelectionChanged">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Накладная" Binding="{Binding Document_num}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Дата накладной" Binding="{Binding Doc_date, StringFormat={}{0:dd.MM.yyyy}}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Дата загрузки" Binding="{Binding Operation_date, StringFormat={}{0:dd.MM.yyyy}}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Content="Добавить" HorizontalAlignment="Left" Margin="173,0,0,6" Name="bAdd" Width="132" Click="bAdd_Click" Height="32" VerticalAlignment="Bottom" Style="{DynamicResource ButtonCommon}"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Содержимое накладной" Margin="334,0,0,0" Name="groupBox1">
+                    <Grid>
+                        <DataGrid AutoGenerateColumns="False" Margin="6" Name="dgDocItems" IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ICC" Binding="{Binding ICC_id}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Дата отгрузки" Binding="{Binding Upload_date, StringFormat={}{0:dd.MM.yyyy}}">
+                                    <DataGridTextColumn.ElementStyle>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Background" Value="{Binding Upload_date, Converter={StaticResource ValueToBrushConverter}}"/>
+                                        </Style>
+                                    </DataGridTextColumn.ElementStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Border>
+        <Label Content="Накладные" FontSize="14" FontWeight="Normal" Height="29" HorizontalAlignment="Left" Name="lSalePointDesc" VerticalAlignment="Top" Width="547" />
+    </Grid>
+
+</UserControl>

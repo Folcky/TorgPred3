@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TorgPred3.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Connector" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">compactor</Value>
+    </Setting>
+    <Setting Name="datapath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TorgPred3.1</Value>
+    </Setting>
+    <Setting Name="datafile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Datafile.sdf</Value>
+    </Setting>
+    <Setting Name="MainSet" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pTorgpred3sp</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

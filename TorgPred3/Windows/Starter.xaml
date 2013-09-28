@@ -1,0 +1,18 @@
+﻿<Window x:Class="TorgPred3.Windows.Starter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TorgPred 3. Идентификация" Height="282" Width="310" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize" IsTabStop="False"
+        FocusManager.FocusedElement="{Binding ElementName=tbPassword}" SnapsToDevicePixels="True">
+    <Grid>
+        <Label Content="Фамилия" Height="28" HorizontalAlignment="Left" Margin="12,9,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Пароль" Height="28" HorizontalAlignment="Left" Margin="12,117,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="26" Margin="12,91,12,0" Name="tbName" VerticalAlignment="Top" TabIndex="2" />
+        <TextBox Height="26" Margin="12,37,12,0" Name="tbSurname" VerticalAlignment="Top" TabIndex="1" />
+        <TextBox Height="26" Margin="12,145,12,0" Name="tbPassword" VerticalAlignment="Top" />
+        <Button Content="Войти" Height="26
+                " Margin="0,194,12,0" Name="bLogin" VerticalAlignment="Top" Style="{DynamicResource ButtonCommon}" Click="bLogin_Click" HorizontalAlignment="Right" Width="112" />
+        <Label Content="Имя" Height="28" HorizontalAlignment="Left" Margin="12,63,0,0" Name="label3" VerticalAlignment="Top" />
+        <Image Height="26" Source="pack://application:,,,/Resources/Login.png" Margin="0,194,130,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Right" Width="26" />
+        <Button Content="Директория" Height="26" Margin="12,194,164,0" Name="bDirectory" Style="{DynamicResource ButtonGreenCommon}" VerticalAlignment="Top" Click="bDirectory_Click" />
+    </Grid>
+</Window>

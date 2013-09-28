@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="datafile" Class="Datafile" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="Dealers">
+    <Type Name="Dealers">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dealer_name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_new" Member="Sale_point_code_new" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_old" Member="Sale_point_code_old" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DW" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RN" Type="System.String" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Zone_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="city" Member="City" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Member="Area" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="street" Member="Street" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="house" Member="House" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="add_comment" Member="Add_comment" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="city_type" Member="City_type" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="subway_station_name" Member="Subway_station_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="street_type" Member="Street_type" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="house_build" Member="House_build" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_person" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Visit_number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_next" Member="Sale_point_code_next" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TorgPred1" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TorgPred2" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="mts_price_id" Member="Mts_price_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="beeline_price_id" Member="Beeline_price_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="megafon_price_id" Member="Megafon_price_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_status" Member="Sale_point_status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="record_status" Member="Record_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="adr_awr" Member="Adr_awr" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="suplier_sale_point_type" Member="Suplier_sale_point_type" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_profile_type" Member="Sale_point_profile_type" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="sale_point_description" Member="Sale_point_description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="comm_rate" Member="Comm_rate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="infocart_registration" Member="Infocart_registration" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Login">
+    <Type Name="Login">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Money">
+    <Type Name="Money">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="money_sum" Member="Money_sum" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="money_date" Member="Money_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="money_action_id" Member="Money_action_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_new" Member="Sale_point_code_new" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_old" Member="Sale_point_code_old" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="operation_date" Member="Operation_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="PriceList">
+    <Type Name="PriceList">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tp_name" Member="Tp_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="price_n1" Member="Price_n1" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n2" Member="Price_n2" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n3" Member="Price_n3" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n4" Member="Price_n4" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n5" Member="Price_n5" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n6" Member="Price_n6" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n7" Member="Price_n7" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n8" Member="Price_n8" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n9" Member="Price_n9" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="price_n10" Member="Price_n10" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="suplier_name" Member="Suplier_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="product_category_name" Member="Product_category_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Refusers">
+    <Type Name="Refusers">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="barcode" Member="Barcode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="refuse_date" Member="Refuse_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_new" Member="Sale_point_code_new" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_old" Member="Sale_point_code_old" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="operation_date" Member="Operation_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Sp_statuses">
+    <Type Name="Sp_statuses">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Stock">
+    <Type Name="Stock">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="barcode" Member="Barcode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="tp_name" Member="Tp_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nominal" Member="Nominal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="document_num" Member="Document_num" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="document_date" Member="Document_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="operation_date" Member="Operation_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Uploads">
+    <Type Name="Uploads">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="barcode" Member="Barcode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="upload_date" Member="Upload_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_new" Member="Sale_point_code_new" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="sale_point_code_old" Member="Sale_point_code_old" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="document_num" Member="Document_num" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Member="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="tp_name" Member="Tp_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="operation_date" Member="Operation_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Visits">
+    <Type Name="Visits">
+      <Column Name="id" Member="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="visit_date" Member="Visit_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sale_point_code_old" Member="Sale_point_code_old" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

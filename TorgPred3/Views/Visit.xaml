@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="TorgPred3.Views.Visit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vals="clr-namespace:TorgPred3.Code"
+             mc:Ignorable="d" 
+             d:DesignHeight="256" d:DesignWidth="547">
+    <Grid>
+        <GroupBox Header="Статус точки" HorizontalAlignment="Left" Width="128" Height="50" VerticalAlignment="Top">
+            <Grid>
+                <ComboBox Height="27" Name="cbSPStatus" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="История посещений" Margin="134,0,0,0">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Margin="0,0,0,0" Name="dgVisit" CanUserResizeRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Дата посещения" Binding="{Binding Visit_date, StringFormat={}{0:dd/MM/yyyy}}" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Отгрузки (кол-во)" Binding="{Binding Uploads_flag}" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Отгрузки (сумма)" Binding="{Binding Price_sum}" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Возвраты (кол-во)" Binding="{Binding Refusers_flag}" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Прием средств (сумма)" Binding="{Binding Money_sum}" IsReadOnly="True"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Посещение" Height="50" HorizontalAlignment="Left" Margin="0,76,0,0" VerticalAlignment="Top" Width="128">
+            <Grid>
+                <Button Content="Отметить" Height="26" HorizontalAlignment="Right" Name="bVisit" Style="{DynamicResource ButtonCommon}" Width="116" VerticalAlignment="Bottom" Click="bVisit_Click" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

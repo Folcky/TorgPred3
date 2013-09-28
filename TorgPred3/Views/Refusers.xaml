@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="TorgPred3.Views.Refusers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:vals="clr-namespace:TorgPred3.Code"
+             d:DesignHeight="280" d:DesignWidth="601">
+    <Grid>
+        <GroupBox Header="Возвраты оборудования" Margin="134,0,0,0">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Margin="0,0,0,0" Name="dgRefusers" RowEditEnding="dgRefusers_RowEditEnding" CellEditEnding="dgRefusers_CellEditEnding" CanUserResizeRows="False">
+                    <DataGrid.RowValidationErrorTemplate>
+                        <ControlTemplate>
+                            <Grid Margin="0,-2,0,-2"
+                          ToolTip="{Binding RelativeSource={RelativeSource
+                          FindAncestor, AncestorType={x:Type DataGridRow}},
+                          Path=(Validation.Errors)[0].ErrorContent}">
+                                <Ellipse StrokeThickness="0" Fill="Red" 
+                        Width="{TemplateBinding FontSize}" 
+                        Height="{TemplateBinding FontSize}" />
+                                <TextBlock Text="!" FontSize="{TemplateBinding FontSize}" 
+                            FontWeight="Bold" Foreground="White" 
+                            HorizontalAlignment="Center"  />
+                            </Grid>
+                        </ControlTemplate>
+                    </DataGrid.RowValidationErrorTemplate>
+                    <DataGrid.RowValidationRules>
+                        <vals:RefuseValidationRule ValidationStep="UpdatedValue"/>
+                    </DataGrid.RowValidationRules>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Сим-карта" Width="200" Binding="{Binding ICC_id, UpdateSourceTrigger=Explicit}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <EventSetter Event="PreviewTextInput" Handler="dgtcICC_PreviewTextInput"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Статус" HorizontalAlignment="Left" Width="128" Height="156" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Кол-во:" Height="28" Margin="0,50,0,0" Name="lRefuseCountLabel" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" Margin="44,84,0,0" Name="lRefuseCount" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

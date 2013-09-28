@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="TorgPred3.Views.MoneyGetter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vals="clr-namespace:TorgPred3.Code"
+             mc:Ignorable="d" 
+             d:DesignHeight="256" d:DesignWidth="547">
+    <Grid>
+        <GroupBox Header="Списание" HorizontalAlignment="Left" Width="128" Height="156" VerticalAlignment="Top">
+            <Grid>
+                <Button Content="Списать долг" Height="32" HorizontalAlignment="Left" Margin="6,95,0,0" Name="bCribMoney" VerticalAlignment="Top" Width="104" Style="{DynamicResource ButtonCommon}" Click="bCribMoney_Click" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="6,66,0,0" Name="tbCribMoney" VerticalAlignment="Top" Width="104" PreviewTextInput="tbCribMoney_PreviewTextInput">
+                </TextBox>
+                <Label Content="Сумма" Height="30" HorizontalAlignment="Left" Margin="6,30,0,0" Name="lCribMoney" VerticalAlignment="Top" Width="104" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="История приема средств" Margin="134,0,0,0">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Margin="0,0,0,0" Name="dgMoney" CanUserResizeRows="False" RowEditEnding="dgMoney_RowEditEnding" PreviewKeyDown="dgMoney_PreviewKeyDown">
+                    <DataGrid.RowValidationErrorTemplate>
+                        <ControlTemplate>
+                            <Grid Margin="0,-2,0,-2"
+                          ToolTip="{Binding RelativeSource={RelativeSource
+                          FindAncestor, AncestorType={x:Type DataGridRow}},
+                          Path=(Validation.Errors)[0].ErrorContent}">
+                                <Ellipse StrokeThickness="0" Fill="Red" 
+                        Width="{TemplateBinding FontSize}" 
+                        Height="{TemplateBinding FontSize}" />
+                                <TextBlock Text="!" FontSize="{TemplateBinding FontSize}" 
+                            FontWeight="Bold" Foreground="White" 
+                            HorizontalAlignment="Center"  />
+                            </Grid>
+                        </ControlTemplate>
+                    </DataGrid.RowValidationErrorTemplate>
+                    <DataGrid.RowValidationRules>
+                        <vals:MoneyValidationRule ValidationStep="UpdatedValue"/>
+                    </DataGrid.RowValidationRules>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Сумма" Width="80" Binding="{Binding Money_sum, UpdateSourceTrigger=Explicit}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <EventSetter Event="PreviewTextInput" Handler="dgtcMoney_PreviewTextInput"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Дата операции" Width="100" Binding="{Binding Money_date, StringFormat={}{0:dd/MM/yyyy}}" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Тип операции" Width="100" Binding="{Binding Money_action_name}" IsReadOnly="True"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

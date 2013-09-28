@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="TorgPred3.Views.SalePointsReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="298" d:DesignWidth="496">
+    <Grid>
+        <ListBox Margin="0,30,0,27" Name="lbSPList">
+        </ListBox>
+        <Label Content="Краткая информация по точкам" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="216" />
+        <Button Content="Найти" Height="26" HorizontalAlignment="Right" Margin="0,0,12,0" Name="bSearch" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="50" Click="bSearch_Click" />
+        <TextBox Height="26" Margin="0,0,76,0" Name="tbSearch" VerticalAlignment="Top" HorizontalAlignment="Right" Width="149" />
+    </Grid>
+</UserControl>

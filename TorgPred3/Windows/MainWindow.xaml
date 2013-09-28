@@ -1,0 +1,53 @@
+﻿<Window x:Class="TorgPred3.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sd="clr-namespace:TorgPred3.Views"
+        Title="TorgPred 3. Дистрибуция" Height="350" Width="525" MinWidth="500"
+        SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" WindowState="Maximized" 
+        TextOptions.TextFormattingMode="Display" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="210*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Border BorderThickness="0,0,0,2" BorderBrush="#FF9D9D9D">
+                <Grid>
+                    <Button Content="Накладные" Height="26" HorizontalAlignment="Left" Margin="103,6,0,0" Name="bStock" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="90" Click="bStock_Click" />
+            <Button Content="Обновить базу" Height="26" HorizontalAlignment="Left" Margin="6,6,0,0" Name="bBase" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="90" Click="bBase_Click" />
+                    <Button Content="Багажник" Height="26" Name="bStockStatus" Style="{DynamicResource ButtonCommon}" Width="90" Margin="199,6,0,6" HorizontalAlignment="Left" Click="bStockStatus_Click" />
+                    <Button Content="Обновить номенклатуру" Height="26" HorizontalAlignment="Left" Margin="295,6,0,6" Name="bPriceList" Style="{DynamicResource ButtonCommon}" Width="145" Click="bPriceList_Click" />
+                </Grid>
+            </Border>    
+        </Grid>
+        <Grid Grid.Row="1" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="103*" MaxWidth="400" MinWidth="83" />
+                <ColumnDefinition Width="4" />
+                <ColumnDefinition Width="420*" />
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1" Width="4" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <sd:PageTransition x:Name="PageTransition1" TransitionType="SlideAndFade" Grid.Column="2" Margin="6" BorderBrush="{x:Null}" />
+            <TreeView Margin="6,35,6,38" Name="tvDealerHierarchy">
+            </TreeView>
+            <ComboBox Height="23" Margin="6,6,6,0" Name="cbHViews" VerticalAlignment="Top" SelectedIndex="0" SelectionChanged="cbHViews_SelectionChanged" Style="{DynamicResource CommandComboBoxStyleCommon}" IsReadOnly="True">
+                <ComboBox.Items>
+                    <ComboBoxItem DataContext="1">Город, Улица, Дом, Точка</ComboBoxItem>
+                    <ComboBoxItem DataContext="2">Город, Улица, Дом, Строение(Павильон), Точка</ComboBoxItem>
+                    <ComboBoxItem DataContext="3">Дилер, Точка</ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+            <Button Content="+" Name="bAddSp" Margin="0,0,6,6" Style="{DynamicResource ButtonCommon}" FontWeight="ExtraBold" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="22" Click="bAddSp_Click" />
+            <TextBox Name="tbSearch" Margin="6,0,89,6" Height="26" VerticalAlignment="Bottom" TextChanged="tbSearch_TextChanged" />
+            <Button Content="Поиск" FontWeight="ExtraBold" Height="26" HorizontalAlignment="Right" Margin="0,0,35,6" Name="btSearch" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Bottom" Width="48" Click="btSearch_Click" />
+        </Grid>
+        <Border Grid.Row="2" BorderThickness="0,2,0,0" BorderBrush="#FF9D9D9D">
+        <Grid>
+                <Label Content="" Height="26" Name="lUser" Margin="0,15,280,0" HorizontalAlignment="Right" Width="144" VerticalAlignment="Top" FontStyle="Italic" />
+                <Button Content="Рабочая директория" Height="26" Margin="0,15,129,0" Name="bDirectory" Style="{DynamicResource ButtonGreenCommon}" VerticalAlignment="Top" Click="bDirectory_Click" HorizontalAlignment="Right" Width="133" />
+                <Button Content="Создать отчеты" Height="26" HorizontalAlignment="Right" Margin="0,15,6,0" Name="bReports" Style="{DynamicResource ButtonRedCommon}" VerticalAlignment="Top" Width="117" Click="bReports_Click" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

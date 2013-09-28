@@ -1,0 +1,11 @@
+﻿<Window x:Class="TorgPred3.Windows.AdminUnlock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AdminUnlock" Height="112" Width="250" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Height="58" Source="pack://application:,,,/Resources/Login.png" Margin="0,8,159,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Right" Width="63" />
+        <Button Content="Войти" Height="26" HorizontalAlignment="Left" Margin="75,40,0,0" Name="bLogin" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="147" Click="bLogin_Click" />
+        <TextBox Height="26
+                 " HorizontalAlignment="Left" Margin="75,8,0,0" Name="tbLogin" VerticalAlignment="Top" Width="147" />
+    </Grid>
+</Window>

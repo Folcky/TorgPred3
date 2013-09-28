@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="TorgPred3.Views.Uploads"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vals="clr-namespace:TorgPred3.Code"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="601">
+    <Grid>
+        <GroupBox Header="Отгрузки" Margin="134,0,0,0">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" Name="dgUploads" 
+                  CanUserSortColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" 
+                  RowEditEnding="dgUploads_RowEditEnding"
+                  CellEditEnding="dgUploads_CellEditEnding">
+                    <DataGrid.RowValidationErrorTemplate>
+                        <ControlTemplate>
+                            <Grid Margin="0,-2,0,-2"
+                          ToolTip="{Binding RelativeSource={RelativeSource
+                          FindAncestor, AncestorType={x:Type DataGridRow}},
+                          Path=(Validation.Errors)[0].ErrorContent}">
+                                <Ellipse StrokeThickness="0" Fill="Red" 
+                        Width="{TemplateBinding FontSize}" 
+                        Height="{TemplateBinding FontSize}" />
+                                <TextBlock Text="!" FontSize="{TemplateBinding FontSize}" 
+                            FontWeight="Bold" Foreground="White" 
+                            HorizontalAlignment="Center"  />
+                            </Grid>
+                        </ControlTemplate>
+                    </DataGrid.RowValidationErrorTemplate>
+                    <DataGrid.RowValidationRules>
+                        <vals:UploadValidationRule ValidationStep="UpdatedValue"/>
+                    </DataGrid.RowValidationRules>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Сим-карта" Binding="{Binding ICC_id, UpdateSourceTrigger=Explicit}" Width="200">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <EventSetter Event="PreviewTextInput" Handler="dgtcICC_PreviewTextInput"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Тарифный план" Width="100" Binding="{Binding TP_name}" IsReadOnly="True"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Стоимость" Binding="{Binding Price, UpdateSourceTrigger=Explicit}" IsReadOnly="True"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Статус" HorizontalAlignment="Left" Width="128" Height="156" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="Кол-во:" Height="28" Name="label3" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" Margin="44,34,0,0" Name="lUploadCount" VerticalAlignment="Top" />
+                <Label Content="Сумма:" Height="28" Margin="0,67,0,0" Name="label5" VerticalAlignment="Top" />
+                <Label Content="0" Height="28" HorizontalAlignment="Left" Margin="44,101,0,0" Name="lUploadSum" VerticalAlignment="Top" Width="72" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

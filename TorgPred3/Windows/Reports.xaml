@@ -1,0 +1,19 @@
+﻿<Window x:Class="TorgPred3.Windows.Reports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TorgPred 3. Отчеты" Height="356" Width="460" WindowStartupLocation="CenterScreen" SnapsToDevicePixels="True" ResizeMode="NoResize">
+    <Grid>
+        <Button Content="Сохранить отчеты" Height="26" Margin="277,279,0,0" Name="bReports" VerticalAlignment="Top" Style="{DynamicResource ButtonCommon}" HorizontalAlignment="Left" Width="129" Click="bReports_Click" />
+        <GroupBox Header="Отчетный период" Height="266" HorizontalAlignment="Left" Margin="12,0,0,0" Name="groupBox1" VerticalAlignment="Top" Width="414">
+            <Grid>
+                <Calendar Height="165" Margin="0,33,210,0" Name="cDF" VerticalAlignment="Top" HorizontalAlignment="Right" Width="178" />
+                <Calendar Height="165" Margin="210,33,0,0" Name="cDT" VerticalAlignment="Top" HorizontalAlignment="Left" Width="178" />
+                <Button Content="&lt;" Height="26" HorizontalAlignment="Left" Margin="14,204,0,0" Name="bPrevPeriod" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="62" Click="bPrevPeriod_Click" />
+                <Button Content="&gt;" Height="26" HorizontalAlignment="Left" Margin="82,204,0,0" Name="bNextPeriod" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="62" Click="bNextPeriod_Click" />
+                <Button Content="&gt;&gt;" Height="26" HorizontalAlignment="Left" Margin="326,204,0,0" Name="bCurPeriod" Style="{DynamicResource ButtonCommon}" VerticalAlignment="Top" Width="62" Click="bCurPeriod_Click" />
+                <Label Content="С:" Height="28" HorizontalAlignment="Left" Margin="14,6,0,0" Name="label1" VerticalAlignment="Top" />
+                <Label Content="По:" Height="28" HorizontalAlignment="Left" Margin="210,6,0,0" Name="label2" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

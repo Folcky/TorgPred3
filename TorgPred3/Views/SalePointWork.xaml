@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="TorgPred3.Views.SalePointWork"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:sd="clr-namespace:TorgPred3.Views"
+             d:DesignHeight="342" d:DesignWidth="491">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Margin="0,66,0,0" Grid.ColumnSpan="4" BorderThickness="0,2,0,0" BorderBrush="#FF9D9D9D">
+        <sd:PageTransition x:Name="PageTransition1" TransitionType="SlideAndFade" Margin="0,6,0,0" BorderBrush="{x:Null}" />
+        </Border>
+        <Label Content="Label" Height="29" Name="lSalePointDesc" VerticalAlignment="Top" FontWeight="Normal" Grid.ColumnSpan="4" FontSize="14" />
+        <ToggleButton Content="Отгрузки" Name="tbUploads" Height="31" VerticalAlignment="Top" Checked="tbUploads_Checked" Style="{DynamicResource ToggleButtonCommon}" Margin="0,29,3,0" Unchecked="tbToggle_Unchecked"></ToggleButton>
+        <ToggleButton Content="Прием средств" Name="tbMoneyGetter" Grid.Column="1" Height="31" VerticalAlignment="Top" Checked="tbMoneyGetter_Checked" Style="{DynamicResource ToggleButtonCommon}" Margin="3,29,3,0" Unchecked="tbToggle_Unchecked" />
+        <ToggleButton Content="Возвраты" Name="tbRefusers" Grid.Column="2" Height="31" VerticalAlignment="Top" Checked="tbRefusers_Checked" Style="{DynamicResource ToggleButtonCommon}" Margin="3,29,0,0" Unchecked="tbToggle_Unchecked" />
+        <ToggleButton Content="Посещения" Name="tbVisits" Grid.Column="3" Height="31" VerticalAlignment="Top" Style="{DynamicResource ToggleButtonCommon}" Margin="3,29,0,0" Checked="tbVisits_Checked" Unchecked="tbToggle_Unchecked" />
+    </Grid>
+</UserControl>
